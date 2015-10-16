@@ -1,0 +1,55 @@
+
+  <% if @appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+      <ul>
+      <% @appointment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Doctor %><br />
+    <%= current_user.name %>
+  </div>
+  <div class="field">
+    <%= f.label :Customer %><br />
+    <%= @appointment.customer.name %>
+  </div>
+  <div class="field">
+    <%= f.label :pet_name %><br />
+    <%= f.text_field :pet_name %>
+  </div>
+  <div class="field">
+    <%= f.label :type_of_pet %><br />
+    <%= f.text_field :type_of_pet %>
+  </div>
+
+  <div class="field">
+    <%= f.label :breed %><br />
+    <%= f.text_area :breed %>
+  </div>
+  
+
+    <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_area :age %>
+  </div>
+
+    <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_area :weight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_of_last_visit %><br />
+    <%= f.datetime_select :date_of_last_visit %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+

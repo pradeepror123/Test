@@ -1,0 +1,65 @@
+
+  <% if @doctor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doctor.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+      <ul>
+      <% @doctor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :City %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :State %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :Zipcode %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <%= f.fields_for :profile do |child| %>
+    <div class="field">
+      <%= child.label :school %><br />
+      <%= child.text_field :school %>
+    </div>
+    <div class="field">
+      <%= child.label :years_in_practice %><br />
+      <%= child.text_field :years_in_practice %>
+    </div>
+  <% end %>
+
+
+
+  <strong>Login Credentials</strong>
+  <div class="field">
+    <%= f.label :Username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+
+    <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+

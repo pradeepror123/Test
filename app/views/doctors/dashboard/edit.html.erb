@@ -1,0 +1,10 @@
+<div class="center hero-unit">
+<h3>Editing profile</h3>
+
+<%= form_for(@doctor, url: "/doctors/doctor/#{@doctor.id}", method: :put) do |f| %>
+  <%= render partial: 'form', :locals => {:f => f} %>
+<% end %>
+
+
+<%= link_to 'Back', doctors_root_path %>
+</div>

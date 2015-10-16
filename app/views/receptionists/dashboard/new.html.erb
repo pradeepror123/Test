@@ -1,0 +1,8 @@
+<div class="center hero-unit">
+<h3>New Appointment</h3>
+<%= form_for(@appointment, url: "/receptionists/new_appointment") do |f| %>
+  <%= render partial: 'form', :locals => {:f => f} %>
+<% end %>
+
+<%= link_to 'Back', receptionists_root_path %>
+</div>
